@@ -19,5 +19,8 @@ describe('makeGuess', () =>{
 });
 
 describe('toggleInfoModal', () => {
-
+  it('should return the action', () => {
+    const action = actions.toggleInfoModal();
+    expect(action.type). toEqual(actions.TOGGLE_INFO_MODAL);
+  })
 });
