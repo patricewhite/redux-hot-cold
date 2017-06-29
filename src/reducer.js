@@ -1,7 +1,8 @@
 import {
     NEW_GAME,
     MAKE_GUESS,
-    TOGGLE_INFO_MODAL
+    TOGGLE_INFO_MODAL,
+    Receive_TOTAL_GUESSES
 } from './actions';
 
 const initialState = {
@@ -59,6 +60,12 @@ export default (state, action) => {
   else if (action.type === TOGGLE_INFO_MODAL) {
     state = Object.assign({}, state, {
       showInfoModal: !state.showInfoModal
+    });
+    return state;
+  }
+  else if(action.type === Receive_TOTAL_GUESSES){
+    state = Object.assign({}, state, {
+      total: action.total
     });
     return state;
   }

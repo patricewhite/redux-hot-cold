@@ -16,3 +16,21 @@ export const toggleInfoModal = () => ({
 });
 
 
+
+export const Receive_TOTAL_GUESSES = 'Receive_TOTAL_GUESSES';
+export const receiveTotalGuesses = total => ({
+  type: Receive_TOTAL_GUESSES,
+  total
+});
+
+
+export const submitTotalGuesses = () => dispatch => {
+  return fetch('http://localhost:8080/numTries').then(res => {
+    if(!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+    return res.json();
+  }).then(total => {
+    dispatch(receiveTotalGuesses(total));
+  });
+};
