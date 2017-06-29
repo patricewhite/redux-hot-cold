@@ -6,13 +6,12 @@ import GuessCount  from './guess-count';
 import GuessList from './guess-list';
 
 export default function Game(props) {
-    return (
-        <div>
-            <Header />
-            <GuessSection />
-            <GuessCount />
-            <GuessList />
-        </div>
-    );
+  return (
+    <div>
+      <Header />
+      <GuessSection />
+      <GuessCount />
+      <GuessList />
+    </div>
+  );
 };
-
